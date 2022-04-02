@@ -1,0 +1,45 @@
+<h3 class="color text-center">Table Of Users</h3>
+
+<div *ngIf="isLoading; else data">
+  <div>loading now</div>
+  <div>error</div>
+  <div class="alert alert-danger text-center">
+    loding now !!!!!!
+  </div>
+</div>
+
+<ng-template #data >
+  <form class="table table-striped" *ngIf = "singleObj">
+    <table >
+        <tr>
+            <th class="color">id</th>
+            <th class="color">user Name</th>
+            <th class="color">email</th>
+            <th class="color">pass</th>
+            <th class="color"> age</th>
+            <th class="color">type</th>
+            <th class="color">phone</th>
+            <th class="color">gender</th>
+            <th class="color">image</th>
+        </tr>
+        <tr>
+          <td class="color">{{singleObj._id}}</td>
+          <td class="color">{{singleObj.name}}</td>
+          <td class="color">{{singleObj.email}}</td>
+          <td class="color">{{singleObj.password}}</td>
+          <td class="color">{{singleObj.age}}</td>
+          <td class="color">{{singleObj.type}}</td>
+          <td class="color">{{singleObj.phone}}</td>
+          <td class="color">{{singleObj.gender}}</td>
+          <td class="color">
+            <img src="http://localhost:3000/{{singleObj.image}}">
+
+          </td>
+      </tr>
+    </table>
+  </form>
+</ng-template>
+
+<div *ngIf="status==0">Loading Now</div>
+<div *ngIf="status==1">Error in data</div>
+<!-- <div *ngIf="status==2">{{singleObj|json}}</div> -->

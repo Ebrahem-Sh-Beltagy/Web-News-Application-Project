@@ -1,0 +1,44 @@
+<p>profile works!</p>
+<div *ngIf="isLoading; else data">
+  <div>loading now</div>
+  <div>error</div>
+  <div class="alert alert-danger text-center">
+    loding now !!!!!!
+  </div>
+</div>
+
+<ng-template #data >
+  <form class="table table-striped" *ngIf = "profData">
+    <table >
+        <tr>
+            <th class="color">id</th>
+            <th class="color">user Name</th>
+            <th class="color">email</th>
+            <th class="color">pass</th>
+            <th class="color"> age</th>
+            <th class="color">type</th>
+            <th class="color">phone</th>
+            <th class="color">gender</th>
+            <th class="color">image</th>
+        </tr>
+        <tr>
+          <td class="color">{{profData._id}}</td>
+          <td class="color">{{profData.name}}</td>
+          <td class="color">{{profData.email}}</td>
+          <td class="color">{{profData.password}}</td>
+          <td class="color">{{profData.age}}</td>
+          <td class="color">{{profData.type}}</td>
+          <td class="color">{{profData.phone}}</td>
+          <td class="color">{{profData.gender}}</td>
+          <td class="color">
+            <img src="http://localhost:3000/{{profData.image}}">
+
+          </td>
+      </tr>
+    </table>
+  </form>
+</ng-template>
+
+<div *ngIf="status==0">Loading Now</div>
+<div *ngIf="status==1">Error in data</div>
+<!-- <div *ngIf="status==2">{{profData|json}}</div> -->

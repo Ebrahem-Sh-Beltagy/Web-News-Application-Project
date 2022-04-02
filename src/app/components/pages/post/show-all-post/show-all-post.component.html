@@ -1,0 +1,47 @@
+<!-- <p>show-all-post works!</p>
+<h3 class="color text-center">Table Of Posts</h3>
+<div class="container tt">
+<div class="alert alert-danger text-center" *ngIf ="!isLoading; else data">
+  Wait For Data Api loading now !!!!!!
+</div>
+<ng-template class = "tt"#data>
+  <form class=" table  table-striped">
+    <table>
+        <tr>
+            <th class="color">id</th>
+            <th class="color">user Name</th>
+            <th class="color">email</th>
+            <th class="color">password</th>
+            <th class="color"> age</th>
+            <th class="color">type</th>
+            <th class="color">phone</th>
+            <th class="color">gender</th>
+            <th class="color">image</th>
+            <th class="color">action</th>
+            <th class="color">Delete</th>
+        </tr>
+        <tr *ngFor= "let t of allPostData; let i=index">
+          <td class="color">{{t._id}}</td>
+          <td class="color">{{t.title}}</td>
+          <td class="color">{{t.description}}</td>
+          <td class="color">{{t.coments}}</td>
+          <td class="color">{{t.age}}</td>
+          <td class="color">{{t.type}}</td>
+          <td class="color">{{t.phone}}</td>
+          <td class="color">{{t.gender}}</td>
+          <td class="color">
+            <img src="http://localhost:3000/{{t.image}}">
+
+          </td>
+          <td class="collor">
+            <button class="btn btn-primary" routerLink="/user/showSingleUser/{{t._id}}">show</button>
+          </td>
+          <td class="collor">
+            <button class="btn btn-danger" (click)="handleDelete(t._id, i)">Delete</button>
+          </td>
+      </tr>
+    </table>
+  </form>
+</ng-template>
+
+</div> -->
